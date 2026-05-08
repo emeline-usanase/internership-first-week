@@ -4,22 +4,21 @@
 <html>
 <head>
     <title></title>
-    <style>
-            a {
-    display: inline-block;
-    text-decoration: none;
-    margin: 5px;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <h2>Search Visitor</h2>
-
+  <div class="form-container">
     <form method="GET">
         <input type="text" name="search" placeholder="Enter visitor name..." required>
-        <button type="submit">Search</button>
+        <button type="submit" class="save-btn">Search</button>
+        <br><br>
+        <a href="dashboard.php" class="back-btn">
+          Back to Dashboard
+        </a>
     </form>
+</div>
 <?php
 if(isset($_GET['search'])){
     $search = $_GET['search'];
@@ -53,9 +52,5 @@ if(isset($_GET['search'])){
     }
 }
 ?>
-<button type="submit" name="submit">
-<a href="dashboard.php" class="back"> Back to Dashboard</a>
-</button>
-
 </body>
 </html>

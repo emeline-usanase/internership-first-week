@@ -5,23 +5,15 @@
 <head>
     <title>Check Out</title>
 </head>
-<style>
-    a {
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none;
-    margin: 5px;
-}
-</style>
 <body>
 
 <h2>Check-Out Visitor</h2>
-
+<div class="form-container">
 <form method="POST">
     Visitor ID: <input type="number" name="id" required>
     <button type="submit" name="checkout">Check Out</button>
 </form>
-
+</div>
 <?php
 if(isset($_POST['checkout'])){
     $id = $_POST['id'];
@@ -36,8 +28,9 @@ if(isset($_POST['checkout'])){
     }
 }
 ?>
-<button type="submit" name="submit">
-<a href="dashboard.php" class="back"> Back to Dashboard</a>
-</button>
+<a href="dashboard.php" class="back-btn">
+          Back to Dashboard
+        </a>
+
 </body>
 </html>

@@ -1,22 +1,28 @@
-<?php include 'connect.php'; ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daily Report</title>
+    <title>All Visitors</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<h2>Today's Visitors</h2>
+<body>
+<?php
+include 'connect.php';
+
+$sql = "SELECT * FROM visitors ORDER BY id ASC";
+$result = $conn->query($sql);
+?>
+
+<div class="header">
+    <h2>All Visitors</h2>
+    <a href="dashboard.php" class="back">Back to Dashboard</a>
+    <a href="check-out.php" class="checkout">Check-Out Visitor </a> 
+</div>
+
+<div class="table-container">
 
 <?php
-
-$today = date("Y-m-d");
-
-$sql = "SELECT * FROM visitors WHERE DATE(time_in)='$today'";
-$result = $conn->query($sql);
-
 if($result->num_rows > 0){
 
     echo "
@@ -32,7 +38,6 @@ if($result->num_rows > 0){
     ";
 
     while($row = $result->fetch_assoc()){
-
         echo "
         <tr>
             <td>".$row['id']."</td>
@@ -48,13 +53,11 @@ if($result->num_rows > 0){
     echo "</table>";
 
 } else {
-    echo "<p class='no-data'>No visitor today</p>";
+    echo "<p class='no-data'>No visitors found</p>";
 }
 ?>
 
 </div>
- <a href="dashboard.php" class="back-btn">
-          Back to Dashboard
-        </a>
+
 </body>
 </html>

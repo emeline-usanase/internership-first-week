@@ -22,16 +22,19 @@ if(isset($_POST['login'])){
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Admin Login</h2>
-
-<form method="POST">
-    Username: <input type="text" name="username"><br><br>
-    Password: <input type="password" name="password"><br><br>
-    <button name="login">Login</button>
-</form>
-
+<h2>LOGIN FIRST</h2>
+  <div class="form-container">
+   <form method="POST">
+    <label for="">Username </label>
+     <input type="text" name="username"><br><br>
+    <label for="">Password: </label>
+     <input type="password" name="password"><br><br>
+    <button name="login" class="back-btn">Login</button>
+   </form>
+</div>
 </body>
 </html>

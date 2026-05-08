@@ -4,25 +4,33 @@
 <html>
 <head>
     <title>Add Visitor</title>
+      <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    a {
-    display: inline-block;
-    text-decoration: none;
-    margin: 5px;
-}
-</style>
 <body>
 
 <h2>Register Visitor</h2>
+<div class="form-container">
+    <form method="POST">
 
-<form method="POST">
-    Name: <input type="text" name="name" required><br><br>
-    Phone: <input type="text" name="phone" required><br><br>
-    Purpose: <input type="text" name="purpose" required><br><br>
-    <button type="submit" name="submit">Save</button>
-</form>
+        <label>Name</label>
+        <input type="text" name="name" required>
 
+        <label>Phone</label>
+        <input type="text" name="phone" required>
+
+        <label>Purpose</label>
+        <input type="text" name="purpose" required>
+
+        <button type="submit" name="submit" class="save-btn">
+            Save Visitor
+        </button> <br> <br> 
+        <a href="dashboard.php" class="back-btn">
+          Back to Dashboard
+        </a>
+    </form>
+
+</div>
+    
 <?php
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
@@ -40,8 +48,5 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-<button type="submit" name="submit">
-<a href="dashboard.php" class="back"> Back to Dashboard</a>
-</button>
 </body>
 </html>
